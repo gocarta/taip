@@ -77,9 +77,13 @@ function validateMessage(message) {
   if (!message.endsWith("<")) throw Error("[@gocarta/taip] message does not end with <");
 }
 
+if (typeof window === "object") {
+  window["@gocarta/taip"] = { parseMessage, validateMessage };
+}
+
 if (typeof define === "function" && define.amd) {
   define(function () {
-    return { parseMessage };
+    return { parseMessage, validateMessage };
   });
 }
 

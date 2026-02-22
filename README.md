@@ -21,8 +21,17 @@ parseMessage(taip_message);
   longitude: -85.2694,
   source: "3D Fix",
   age: "Fresh",
-  id: "0135"
+  id: "0135" // this is the vehicle or unit id often sent by a router or CAD/AVL
 }
+```
+
+## browser usage
+You can also load this library directly in html via a script tag like
+```html
+<script src="https:/unpkg.com/@gocarta/taip"></script>
+<script>
+  window["@gocarta/taip"].parseMessage(">RCP53000+350572-085269412;ID=0135<");
+</script>
 ```
 
 ## known limitations

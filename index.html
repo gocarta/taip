@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./index.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+      #app {
+        margin: 0 auto;
+        max-width: 800px;
+        text-align: left;
+      }
+
+      #taip {
+        max-width: 100%;
+      }
+
+      #results {
+        min-height: 200px;
+        max-height: 500px;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      #map {
+        min-height: 200px;
+        width: 100%;
+      }
+    </style>
+    <script>
+      window.app = {
+        state: {
+          taip: ">RCP53000+350572-085269412;ID=0135<"
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>@gocarta/taip</h1>
+      <h2>JavaScript Parser of Trimble ASCII Interface Protocol (TAIP) Messages</h2>
+
+      <div>
+        <label>Enter TAIP Message</label>
+        </br>
+        <input type="text" id="taip" style="width: 100%">
+      </div>
+      <div>
+        </br>
+        <button id="parse">Parse</button>
+      </div>
+
+      </br></br>
+      <div>
+        <div><b>Results</b></div>
+        <textarea id="results"></textarea>
+      </div>
+
+      </br></br>
+      <div>
+        <div><b>Map</b></div>
+        <iframe id="map"></iframe>
+      </div>
+    </div>
+    <script>
+      function handleClick() {
+        const message = document.getElementById("taip").value.trim();
+        app.state.parsed = window["@gocarta/taip"].parseMessage(message);
+        render();
+      }
+      function render() {
+        document.getElementById("taip").value = app.state.taip;
+        document.getElementById("results").value = JSON.stringify(app.state.parsed, undefined, 2);
+        document.getElementById("map").src = "https://gocarta.github.io/mapframe/?latitude=" + app.state.parsed.latitude + "&longitude=" + app.state.parsed.longitude;
+      }
+
+      document.getElementById("parse").addEventListener("click", handleClick);
+
+      app.state.parsed = window["@gocarta/taip"].parseMessage(app.state.taip);
+
+      render();
+    </script>
+  </body>
+</html>
