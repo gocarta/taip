@@ -2,6 +2,9 @@
   "name": "@gocarta/taip",
   "version": "0.0.0",
   "description": "JavaScript Parser of Trimble ASCII Interface Protocol (TAIP) Messages",
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "geospatial",
     "gps",
