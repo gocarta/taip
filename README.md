@@ -14,14 +14,14 @@ const taip_message = ">RCP53000+350572-085269412;ID=0135<";
 
 parseMessage(taip_message);
 {
-  qualifier: 'R',
-  subject: 'Compact Position',
-  time: '14:43:20', 
+  qualifier: "R",
+  subject: "Compact Position",
+  time: "14:43:20",
   latitude: 35.0572,
   longitude: -85.2694,
-  source: '3D Fix',
+  source: "3D Fix",
   age: "Fresh",
-  id: '0135'
+  id: "0135"
 }
 ```
 
