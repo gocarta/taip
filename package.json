@@ -1,0 +1,29 @@
+{
+  "name": "@gocarta/taip",
+  "version": "0.0.0",
+  "description": "JavaScript Parser of Trimble ASCII Interface Protocol (TAIP) Messages",
+  "keywords": [
+    "geospatial",
+    "gps",
+    "taip"
+  ],
+  "homepage": "https://github.com/gocarta/taip#readme",
+  "bugs": {
+    "url": "https://github.com/gocarta/taip/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gocarta/taip.git"
+  },
+  "license": "CC0-1.0",
+  "author": "Daniel J. Dufour",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --arrow-parens=avoid --print-width=160 --trailing-comma=none --write *.js",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "flug": "^2.8.2"
+  }
+}
